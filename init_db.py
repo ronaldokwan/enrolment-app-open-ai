@@ -26,6 +26,10 @@ CREATE TABLE IF NOT EXISTS students (
 )
 """)
 
+cursor.execute("""
+CREATE INDEX IF NOT EXISTS idx_subject_code ON students(subject_code)
+""")
+
 cursor.execute("DELETE FROM students")
 
 cursor.executemany(
